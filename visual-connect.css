@@ -1,0 +1,32 @@
+.visual-connect-container { font-family: Arial, sans-serif; background: #2c3e50; height: 100vh; display: flex; }
+.vc-toolbar { width: 220px; background: #34495e; padding: 10px; color: #fff; }
+.vc-toolbar h3 { text-align: center; }
+.vc-block-template { margin: 8px 0; padding: 8px; border-radius: 5px; cursor: grab; text-align: center; font-weight: bold; }
+.vc-block-template.start { background: #27ae60; }
+.vc-block-template.process { background: #3498db; }
+.vc-block-template.condition { background: #f39c12; }
+.vc-block-template.input { background: #9b59b6; }
+.vc-block-template.output { background: #1abc9c; }
+.vc-block-template.loop { background: #8e44ad; }
+.vc-block-template.variable { background: #2ecc71; }
+.vc-block-template.function { background: #34495e; }
+.vc-block-template.end { background: #e74c3c; }
+.vc-main { flex: 1; display: flex; flex-direction: column; position: relative; }
+.vc-workspace { flex: 1; background: #34495e; position: relative; overflow: hidden; }
+.vc-block { position: absolute; min-width: 90px; min-height: 50px; border-radius: 5px; color: #fff; font-weight: bold; cursor: move; border: 1px solid #555; display: flex; align-items: center; justify-content: center; }
+.vc-block.selected { border: 2px solid #f1c40f; }
+.vc-conn-point { position: absolute; width: 12px; height: 12px; background: #f1c40f; border-radius: 50%; border: 1px solid #fff; cursor: crosshair; }
+.vc-conn-point.input { left: -6px; top: 50%; transform: translateY(-50%); }
+.vc-conn-point.output { right: -6px; top: 50%; transform: translateY(-50%); }
+.vc-code-panel { background: #2c3e50; color: #2ecc71; font-family: monospace; padding: 12px; border-top: 1px solid #555; }
+.vc-controls { position: absolute; top: 10px; right: 10px; z-index: 2; }
+.vc-controls button { margin-left: 6px; padding: 6px 10px; background: #34495e; border: 1px solid #555; color: #fff; border-radius: 4px; cursor: pointer; }
+.vc-controls .run { background: #27ae60; }
+.vc-config-modal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; z-index: 100; }
+.vc-config-box { background: #34495e; padding: 20px; border-radius: 10px; min-width: 220px; }
+.vc-config-box label { color: #fff; font-size: 14px; display: block; margin-bottom: 4px; }
+.vc-config-box input, .vc-config-box select, .vc-config-box textarea { width: 100%; padding: 6px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #555; background: #2c3e50; color: #fff; }
+.vc-config-box .vc-config-buttons { display: flex; gap: 10px; }
+.vc-config-box button { flex: 1; padding: 8px; border: none; border-radius: 4px; color: #fff; font-weight: bold; cursor: pointer; }
+.vc-config-box .save { background: #27ae60; }
+.vc-config-box .cancel { background: #e74c3c; }
