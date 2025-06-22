@@ -7,7 +7,34 @@
     <div id="visual-connect-root"></div>
     <script src="visual-connect.js"></script>
     <script>
-        new VisualConnect(document.getElementById('visual-connect-root'));
+        const vc = new VisualConnect(document.getElementById('root'), { 
+  languages: ['js','py','pseudo'],
+  toolbar: true
+});
+
+vc.on('blockAdded', (block) => {
+  console.log('Block added:', block);
+});
+
+const id = vc.addBlock('process', 100, 100, { operation: 'x++;' });
+vc.updateBlock(id, { operation: 'y++;' });
+
+const blocks = vc.getBlocks();
+const connections = vc.getConnections();
+
+vc.connectBlocks(blocks[0].id, blocks[1].id);
+const code = vc.generateCode('js');
+
+const snapshot = vc.exportWorkspace();
+vc.importWorkspace(snapshot);
+
+vc.registerBlockType('log', {
+  color: '#fff',
+  text: 'LOG',
+  configurable: true,
+  config: { message: { label: 'Message', type: 'text', default: 'Hello' } },
+  code: { js: c=>`console.log(${c.message})` }
+});
     </script>
 </body>
 </html>
